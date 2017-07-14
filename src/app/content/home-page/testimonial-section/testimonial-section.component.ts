@@ -27,6 +27,8 @@ export class TestimonialSectionComponent implements OnInit {
   tindex: number = 0;
   testimonials: any;
 
+  swipping: boolean;
+
   SWIPE_ACTION = {LEFT: 'swipeleft', RIGHT: 'swiperight'};
 
 
@@ -40,6 +42,7 @@ export class TestimonialSectionComponent implements OnInit {
 
   setTestimonial() {
     if (screen.width < 600) {
+      this.swipping = true;
       this.testimonials.push(this.raw_testimonials[0]);
     }
     else {
@@ -48,6 +51,7 @@ export class TestimonialSectionComponent implements OnInit {
   }
 
   pushTestemonial() {
+    this.testimonials = [];
     this.testimonials.push(this.raw_testimonials[this.tindex]);
   }
 
@@ -60,12 +64,10 @@ export class TestimonialSectionComponent implements OnInit {
 
     if (type == 'swipeleft') {
       if (!(this.tindex == (this.raw_testimonials.length - 1))) {
-        this.testimonials = [];
         this.tindex += 1;
         this.pushTestemonial()
       }
       else {
-        this.testimonials = [];
         this.tindex = 0;
         this.pushTestemonial()
       }
@@ -73,17 +75,24 @@ export class TestimonialSectionComponent implements OnInit {
 
     if (type == 'swiperight') {
       if (!(this.tindex == 0)) {
-        this.testimonials = [];
         this.tindex -= 1;
         this.pushTestemonial()
       }
       else {
-        this.testimonials = [];
         this.tindex = this.raw_testimonials.length - 1;
         this.pushTestemonial()
       }
     }
     }
-  }
+
+    getIndexes() {
+      let list = [];
+
+      for (let _i = 0; _i < this.raw_testimonials.length; _i++) {
+        list.push(_i)
+      }
+      return list
+    }
+}
 
 
