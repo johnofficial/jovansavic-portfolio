@@ -12,6 +12,13 @@ import { HireMePageComponent } from './content/hire-me-page/hire-me-page.compone
 import { AboutSectionComponent } from './content/home-page/about-section/about-section.component';
 import { TestimonialSectionComponent } from './content/home-page/testimonial-section/testimonial-section.component';
 import { PortfolioSectionComponent } from './content/home-page/portfolio-section/portfolio-section.component';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = <any>{
+    'swipe': {velocity: 0.4, threshold: 20} // override default settings
+  }
+}
 
 @NgModule({
   declarations: [
@@ -35,7 +42,10 @@ import { PortfolioSectionComponent } from './content/home-page/portfolio-section
         {path: 'hire-me', component: HireMePageComponent }
     ]),
   ],
-  providers: [],
+  providers: [ {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: MyHammerConfig
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

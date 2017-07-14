@@ -2,7 +2,7 @@
 <h2>They love my work</h2>
   <div class="testimonial-wrap">
 
-    <article (click)="changeTestemonial()" class="testimonial" *ngFor="let t of testimonials">
+    <article (swiperight)="swipeChangeTestemonial($event.type)" (swipeleft)="swipeChangeTestemonial($event.type)" class="testimonial show" *ngFor="let t of testimonials">
       <img src="{{t.image}}" alt="{{t.name}}">
       <h3>{{t.name}}</h3>
       <p> {{t.description}} </p>

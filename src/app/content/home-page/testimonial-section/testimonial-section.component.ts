@@ -9,17 +9,17 @@ export class TestimonialSectionComponent implements OnInit {
 
   raw_testimonials = [
     {
-      name:  'John Doe',
+      name: 'John Doe',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     },
     {
-      name:  'Veljko Stanojevic',
+      name: 'Veljko Stanojevic',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     },
     {
-      name:  'Jovan Savic',
+      name: 'Jovan Savic',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     }
@@ -27,41 +27,63 @@ export class TestimonialSectionComponent implements OnInit {
   tindex: number = 0;
   testimonials: any;
 
+  SWIPE_ACTION = {LEFT: 'swipeleft', RIGHT: 'swiperight'};
 
 
   constructor() {
     this.testimonials = [];
-    this.selectTestemonials()
+    this.setTestimonial()
   }
 
   ngOnInit() {
   }
 
-
-  selectTestemonials() {
+  setTestimonial() {
     if (screen.width < 600) {
-      this.testimonials = [];
-      this.testimonials.push(this.raw_testimonials[this.tindex]);
+      this.testimonials.push(this.raw_testimonials[0]);
     }
     else {
       this.testimonials = this.raw_testimonials;
     }
   }
 
-  changeTestemonial() {
-    if (screen.width < 600) {
+  pushTestemonial() {
+    this.testimonials.push(this.raw_testimonials[this.tindex]);
+  }
+
+  swipeChangeTestemonial(type) {
+    if (screen.width > 600) {
+      return
+    }
+    console.log(this.tindex);
+
+
+    if (type == 'swipeleft') {
       if (!(this.tindex == (this.raw_testimonials.length - 1))) {
+        this.testimonials = [];
         this.tindex += 1;
-        this.selectTestemonials();
+        this.pushTestemonial()
       }
       else {
-        this.tindex = -1;
-        this.changeTestemonial();
+        this.testimonials = [];
+        this.tindex = 0;
+        this.pushTestemonial()
       }
+    }
 
+    if (type == 'swiperight') {
+      if (!(this.tindex == 0)) {
+        this.testimonials = [];
+        this.tindex -= 1;
+        this.pushTestemonial()
+      }
+      else {
+        this.testimonials = [];
+        this.tindex = this.raw_testimonials.length - 1;
+        this.pushTestemonial()
+      }
+    }
     }
   }
 
 
-
-}
