@@ -1,8 +1,8 @@
 <section class="testimonial-section">
-<h2>They love my work</h2>
+<h2 (click)="logElement()">They love my work</h2>
   <div class="testimonial-wrap">
-    
-    <article class="testimonial" *ngFor="let t of testimonials">
+
+    <article (click)="changeTestemonial()" class="testimonial" *ngFor="let t of testimonials">
       <img src="{{t.image}}" alt="{{t.name}}">
       <h3>{{t.name}}</h3>
       <p> {{t.description}} </p>

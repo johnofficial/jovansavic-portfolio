@@ -7,27 +7,74 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestimonialSectionComponent implements OnInit {
 
-  testimonials = [
+  raw_testimonials = [
     {
       name:  'John Doe',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     },
     {
-      name:  'John Doe',
+      name:  'Veljko Stanojevic',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     },
     {
-      name:  'John Doe',
+      name:  'Jovan Savic',
       image: 'assets/img/face.png',
       description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
     }
   ];
+  tindex: number = 0;
+  testimonials: any;
 
-  constructor() { }
+
+
+  constructor() {
+    this.testimonials = [];
+    this.selectTestemonials()
+  }
 
   ngOnInit() {
   }
+
+
+  selectTestemonials() {
+    if (screen.width < 600) {
+      this.testimonials = [];
+      this.testimonials.push(this.raw_testimonials[this.tindex]);
+    }
+    else {
+      this.testimonials = this.raw_testimonials;
+    }
+  }
+
+  changeTestemonial() {
+    if (screen.width < 600) {
+      if (!(this.tindex == (this.raw_testimonials.length - 1))) {
+        this.tindex += 1;
+        this.selectTestemonials();
+      }
+      else {
+        this.tindex = -1;
+        this.changeTestemonial();
+      }
+
+    }
+  }
+
+  logElement() {
+    let x = document.getElementsByClassName('testimonial');
+    
+    console.log(x[0].className);
+    if (!(x[0].className.search('show') != -1)) {
+      x[0].className += ' show';
+    }
+
+    // console.log(x[0].children[0].getAttribute('src'))
+
+  }
+
+
+
 
 }
