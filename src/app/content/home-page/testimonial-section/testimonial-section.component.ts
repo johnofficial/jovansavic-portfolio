@@ -62,19 +62,6 @@ export class TestimonialSectionComponent implements OnInit {
     }
   }
 
-  logElement() {
-    let x = document.getElementsByClassName('testimonial');
-    
-    console.log(x[0].className);
-    if (!(x[0].className.search('show') != -1)) {
-      x[0].className += ' show';
-    }
-
-    // console.log(x[0].children[0].getAttribute('src'))
-
-  }
-
-
 
 
 }
