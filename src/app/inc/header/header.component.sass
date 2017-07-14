@@ -1,0 +1,119 @@
+/* Hide Mobile Elements */
+.mobile-header, .mobile-nav-toggle, .mobile-logo
+    display: none
+/* End of Hide Mobile Elements */
+
+
+.site-header
+    height: 80px
+    a
+        font-family: 'Zilla Slab', serif
+        text-transform: uppercase
+        line-height: 80px
+        
+.logo
+    float: left
+    a
+        color: #0001FF
+        font-size: 20px
+.site-nav
+    float: right
+    a 
+        margin-right: 30px
+        font-size: 16px
+        &:last-child
+            margin-right: 0px
+    .flat-btn
+        font-size: 20px
+
+
+/* Bigger Pading for Header Elements if screen is smaller then 1080px */
+@media (max-width: 1080px) and (min-width: 775px)
+    .site-header
+        padding-left: 50px
+        padding-right: 50px
+/* End of Bigger Pading for Header Elements if screen is smaller then 1080px */
+
+
+/* Styles for Tablets and Phones */
+@media (max-width: 775px)
+    /* Hide Desktop elements */
+    .logo, .site-nav
+        display: none
+    /* End of Hide Desktop elements */
+    /* Show Mobile Elements */
+    .mobile-header, .mobile-nav-toggle, .mobile-logo
+        display: block
+    /* End of Show Mobile Elements */
+    .mobile-logo
+        float: right
+        font-size: 20px
+        margin-right: 10px
+        a  
+            color: black
+    .site-header
+        border-bottom: 1px solid #95989A
+    .mobile-header
+        position: absolute
+        width: 300px
+        height: calc(100vh - 80px)
+        top: 80px
+        background: white
+        transition: .3s
+        transform: translateX(-100%)
+        border-right: 1px solid #95989A
+        z-index: 999
+        a 
+            display: block
+            text-transform: uppercase
+            font-family: 'Zilla Slab', serif
+            margin-left: 10px
+            padding: 10px 0px
+        &.is-open
+            transform: translateX(0%)
+    .mobile-nav-toggle
+        margin-top: calc( 40px - 12px )
+        margin-left: 10px
+        float: left
+        width: 40px
+        height: 24px
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        span
+            width: 25px
+        span,
+        span:after,
+        span:before
+            left: 0
+            transition: .3s
+            display: block
+            position: absolute
+            content: ""
+            height: 3px
+            background-color: black
+        span:before
+            top: -10px
+            width: 30px
+        span:after
+            width: 40px
+            top: 10px
+        &.is-open span 
+            background-color: transparent 
+        &.is-open span:before
+            top: 0px
+            transform: rotate(45deg)
+            width: 40px
+            transform-origin: center
+        &.is-open span:after
+            top: 0px
+            transform: rotate(-45deg)
+            width: 40px
+            
+
+
+
+.active
+    color: #212121

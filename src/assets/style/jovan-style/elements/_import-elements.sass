@@ -1,0 +1,26 @@
+.flat-btn
+    color: #0001FF
+    position: relative
+    
+    span
+        display: block
+        transition: .3s
+        content: ""
+        width: 0%
+        height: 2px
+        background-color: #0001FF
+        position: absolute
+        left: 0
+        bottom: 0
+    &:hover span
+        width: 100%
+    &.on-mobile span
+        width: 40px
+        bottom: 5px
+    &.bold
+        font-weight: 700
+
+.big-btn
+    padding: 13px 30px
+    background: #0001FF
+    color: white

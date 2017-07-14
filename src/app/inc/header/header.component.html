@@ -1,0 +1,21 @@
+<header class="mobile-header" [class.is-open]="is_open" >
+  <nav class="mobile-navigation">
+    <a routerLink="about" routerLinkActive="active" (click)="is_open = !is_open">About</a>
+    <a routerLink="portfolio" routerLinkActive="active" (click)="is_open = !is_open">Portfolio</a>
+    <a routerLink="hire-me" routerLinkActive="active" (click)="is_open = !is_open" class="flat-btn on-mobile">Hire Me<span></span></a>
+  </nav>
+</header>
+<div class="wrap w-100-percent">
+  <header class="site-header mw-1080 center">
+    <div class="mobile-nav-toggle" (click)="is_open = !is_open" [class.is-open]="is_open" >
+      <span></span>
+    </div>
+    <div class="logo">  <a routerLink="" routerLinkActive="active" class="flat-btn" >{{title}}<span></span></a> </div>
+    <nav class="site-nav">
+      <a routerLink="about" routerLinkActive="active" >About</a>
+      <a routerLink="portfolio" routerLinkActive="active" >Portfolio</a>
+      <a routerLink="hire-me" routerLinkActive="active" class="flat-btn">Hire Me<span></span></a>
+    </nav>
+    <div class="mobile-logo" (click)="closeMenu()">  <a routerLink="" routerLinkActive="active" >{{title}}</a> </div>
+  </header>
+</div>
