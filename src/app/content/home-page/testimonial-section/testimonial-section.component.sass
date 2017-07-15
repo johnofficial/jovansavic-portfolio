@@ -22,8 +22,8 @@
     position: relative
     animation: flipInY 1s ease-in-out 0s 1
     img
-        width: 120px
         height: 120px
+        width: auto
         border: 2px solid #0001FF
         border-radius: 50%
         position: absolute
@@ -41,6 +41,29 @@
         text-align: center
         font-size: 28px
         padding-bottom: 20px
+.rc-wrap
+    display: flex
+    max-width: 60%
+    justify-content: space-between
+    margin: auto
+    margin-top: 30px
+.radio-container
+    display: inline-block
+    position: relative
+    input[type=radio]
+        position: absolute
+        left: 0
+        width: 60px
+        opacity: 0
+    input[type=radio] + label span
+        display: inline-block
+        width: 60px
+        height: 5px
+        border: 2px solid #0001FF
+        border-radius: 5px
+    input[type=radio]:checked + label span 
+        background: #0001FF
+
 
 @media(max-width: 925px) and (min-width: 600px)
     .testimonial-wrap

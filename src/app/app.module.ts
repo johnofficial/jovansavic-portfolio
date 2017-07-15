@@ -13,8 +13,9 @@ import { AboutSectionComponent } from './content/home-page/about-section/about-s
 import { TestimonialSectionComponent } from './content/home-page/testimonial-section/testimonial-section.component';
 import { PortfolioSectionComponent } from './content/home-page/portfolio-section/portfolio-section.component';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import { RequestsService } from 'app/shared/requests.service';
 
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
@@ -46,10 +47,13 @@ export class MyHammerConfig extends HammerGestureConfig  {
         {path: 'hire-me', component: HireMePageComponent }
     ]),
   ],
-  providers: [ {
+  providers: [ 
+    {
     provide: HAMMER_GESTURE_CONFIG,
-    useClass: MyHammerConfig
-  }],
+    useClass: MyHammerConfig,
+    },
+    RequestsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from 'app/shared/requests.service';
 
 @Component({
   selector: 'app-testimonial-section',
@@ -7,23 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestimonialSectionComponent implements OnInit {
 
-  raw_testimonials = [
-    {
-      name: 'John Doe',
-      image: 'assets/img/face.png',
-      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
-    },
-    {
-      name: 'Veljko Stanojevic',
-      image: 'assets/img/face.png',
-      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
-    },
-    {
-      name: 'Jovan Savic',
-      image: 'assets/img/face.png',
-      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky.'
-    }
-  ];
+  raw_testimonials = [];
   tindex: number = 0;
   testimonials: any;
 
@@ -32,9 +17,14 @@ export class TestimonialSectionComponent implements OnInit {
   SWIPE_ACTION = {LEFT: 'swipeleft', RIGHT: 'swiperight'};
 
 
-  constructor() {
+  constructor( private api: RequestsService) {
     this.testimonials = [];
-    this.setTestimonial()
+    
+    this.api.getTestimonials().subscribe(res => {
+      this.raw_testimonials = res.testimonials;
+      this.setTestimonial();
+    })
+
   }
 
   ngOnInit() {
