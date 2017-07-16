@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from 'app/shared/requests.service';
+
 
 @Component({
   selector: 'app-portfolio-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioPageComponent implements OnInit {
 
-  constructor() { }
+  constructor( public request: RequestsService ) { }
 
   ngOnInit() {
+  }
+  getProjectsList(){
+    return Object.keys(this.request.project);
   }
 
 }

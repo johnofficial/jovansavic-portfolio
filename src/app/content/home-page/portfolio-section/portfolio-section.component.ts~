@@ -15,7 +15,7 @@ export class PortfolioSectionComponent implements OnInit {
   }
   
   getProjectsList(){
-   let _limit = 3;
+   let _limit = 10;
    return  Object.keys(this.request.project).slice(0, _limit)
   }
 }

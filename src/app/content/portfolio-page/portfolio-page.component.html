@@ -1,3 +1,20 @@
-<p>
-  portfolio-page works!
-</p>
+<section class="portfolio-section">
+  <div class="portfolio-wrap">
+    <div class="meta">
+      <h1>Portfolio</h1>
+    </div>
+    <div class="projects">
+
+      <article class="project" *ngFor="let id_project of getProjectsList()" [routerLink]="[id_project ]" >
+        <img src="{{request.project[id_project].photo}}" alt="{{request.project[id_project].title}} thumbnail">
+        <div class="cover">
+          <div class="meta">
+            <h2>{{request.project[id_project].title}}</h2>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>

@@ -16,6 +16,8 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { RequestsService } from 'app/shared/requests.service';
+import { PortfolioViewComponent } from "app/content/portfolio-page/portfolio-view/portfolio-view.component";
+import { SubscribeSectionComponent } from './content/home-page/subscribe-section/subscribe-section.component';
 
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
@@ -34,7 +36,9 @@ export class MyHammerConfig extends HammerGestureConfig  {
     HireMePageComponent,
     AboutSectionComponent,
     TestimonialSectionComponent,
-    PortfolioSectionComponent
+    PortfolioSectionComponent,
+    PortfolioViewComponent,
+    SubscribeSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ export class MyHammerConfig extends HammerGestureConfig  {
         {path: '', component: HomePageComponent },
         {path: 'about', component: AboutPageComponent },
         {path: 'portfolio', component: PortfolioPageComponent },
-        {path: 'hire-me', component: HireMePageComponent }
+        {path: 'hire-me', component: HireMePageComponent },
+        {path: 'portfolio/:id', component: PortfolioViewComponent }
     ]),
   ],
   providers: [ 
