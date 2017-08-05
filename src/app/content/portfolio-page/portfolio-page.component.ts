@@ -17,4 +17,5 @@ export class PortfolioPageComponent implements OnInit {
     return Object.keys(this.request.project);
   }
 
+
 }

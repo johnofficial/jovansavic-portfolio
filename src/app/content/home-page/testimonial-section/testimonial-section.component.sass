@@ -23,7 +23,7 @@
     animation: flipInY 1s ease-in-out 0s 1
     img
         height: 120px
-        width: auto
+        width: 120px
         border: 2px solid #0001FF
         border-radius: 50%
         position: absolute
@@ -35,12 +35,16 @@
         color: black
         font-weight: 300
         margin: 70px 10px auto
-    p  
-        max-width: 90%
-        margin: auto
-        text-align: center
-        font-size: 28px
-        padding-bottom: 20px
+    p
+          max-width: 90%
+          margin: auto
+          text-align: center
+          font-size: 28px
+          padding-bottom: 20px
+          &.title
+            color: rgba(0,0,0,0.6)
+            font-style: italic
+            font-size: 20px
 .rc-wrap
     display: flex
     max-width: 80%
@@ -61,7 +65,7 @@
         height: 5px
         border: 2px solid #0001FF
         border-radius: 5px
-    input[type=radio]:checked + label span 
+    input[type=radio]:checked + label span
         background: #0001FF
 
 
@@ -78,11 +82,11 @@
         h3
             margin: 10px 70px
             text-align: left
-        p 
+        p
             margin-left: 70px
             text-align: left
             padding-right: 10px
-        img 
+        img
             top: calc(50% - 60px)
             left: -60px
 
@@ -94,22 +98,22 @@
 
 
 
-@keyframes flipInY 
-    from 
+@keyframes flipInY
+    from
         transform: perspective(400px) rotate3d(0, 1, 0, 90deg)
         animation-timing-function: ease-in
         opacity: 0
 
-    40% 
+    40%
         transform: perspective(400px) rotate3d(0, 1, 0, -20deg)
         animation-timing-function: ease-in
 
-    60% 
+    60%
         transform: perspective(400px) rotate3d(0, 1, 0, 10deg)
         opacity: 1
 
-    80% 
+    80%
         transform: perspective(400px) rotate3d(0, 1, 0, -5deg)
 
-    to 
+    to
         transform: perspective(400px)

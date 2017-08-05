@@ -1,3 +1,63 @@
-<p>
-  about-page works!
-</p>
+<!--Hero section -->
+<section class="cover-section">
+  <div class="cover-wrap">
+
+    <div class="intro">
+      <img src="assets/img/face_me.png" alt="Jova Savic Face">
+      <div class="text">
+        <h2><strong>A</strong>bout me <span></span></h2>
+        <p>Let’s keep it short, those are my skills. If you want to know more just scroll.</p>
+      </div>
+    </div>
+
+
+    <div class="skills">
+    <div class="skills-wrap">
+
+      <div class="design">
+        <h3 class="design-title">Design</h3>
+        <ul>
+          <li>User Experience</li>
+          <li>User Interfaces</li>
+          <li>Web design</li>
+          <li>App design</li>
+        </ul>
+      </div>
+
+      <div class="coding">
+        <h3 class="coding-title">Design</h3>
+        <ul>
+          <li>HTML, CSS (Sass), JS</li>
+          <li>WordPress Theme Dev</li>
+          <li>Jekyll</li>
+        </ul>
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Work Environment -->
+<section class="w-env-section">
+  <div class="w-env-wrap">
+    <h2>Work Environment<span></span></h2>
+    <p>I’m <strong>designing</strong> with Adobe Xd (Since begin of 2017.), I switched from Photoshop and Illustrator because it’s made especially for designing Apps and Websites and it’s great for a prototype. I use Illustrator for making logos and more complicated vector designs. </p>
+    <p>For <strong>coding</strong>, I’m using WebStrom, phpStorm, SublimeText 3. All my open source projects I upload on Github. I work on MacOS (MacBook Pro).</p>
+  </div>
+</section>
+
+<!-- Visualising my technical skills -->
+<section class="v-skills-section">
+  <h2>Visualising my skills</h2>
+  <div class="v-skills-wrap">
+
+    <div class="skill" *ngFor="let s of skills">
+      <p>{{s.title}}</p>
+      <div class="loader">
+        <div class="loader-bg {{s.class}}"></div>
+      </div>
+    </div>
+  </div>
+</section>

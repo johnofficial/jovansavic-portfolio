@@ -39,6 +39,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
     PortfolioSectionComponent,
     PortfolioViewComponent,
     SubscribeSectionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,9 +51,9 @@ export class MyHammerConfig extends HammerGestureConfig  {
         {path: 'portfolio', component: PortfolioPageComponent },
         {path: 'hire-me', component: HireMePageComponent },
         {path: 'portfolio/:id', component: PortfolioViewComponent }
-    ]),
+    ], { useHash: true })
   ],
-  providers: [ 
+  providers: [
     {
     provide: HAMMER_GESTURE_CONFIG,
     useClass: MyHammerConfig,

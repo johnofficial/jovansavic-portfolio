@@ -3,9 +3,10 @@
     <div class="text">
       <h1>{{project.title}}</h1>
       <p>{{project.description}} </p>
+      <button (click)="goBack()" > Back</button>
     </div>
-    <div class="photo">
-      <img src="{{project.photo}}" alt="">
+    <div class="photo" >
+      <img *ngFor="let photos of getPhotos()" src="{{photos}}" alt="">
     </div>
   </div>
 </section>

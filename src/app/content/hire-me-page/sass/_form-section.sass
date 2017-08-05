@@ -1,0 +1,119 @@
+.form-section
+  width: 100%
+.fs-wrap
+  max-width: 630px
+  margin: auto
+  padding-bottom: 60px
+  padding-top: 10px
+  text-align: center
+  h2
+    color: #95989A
+    font-weight: 400
+    margin-bottom: 40px
+    font-size: 20px
+form
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  justify-content: space-between
+.i-wrap
+  position: relative
+  margin-bottom: 20px
+  width: 300px
+
+.ta-wrap
+  width: 100%
+  position: relative
+  margin-top: 16px
+  textarea
+    max-width: 100%
+    width: 100%
+    height: 30px
+    border-color: transparent
+    border-bottom: 1px solid rgba(0,0,0,0.5)
+    outline: none
+    transition: .3s
+    padding: 0
+    background-color: transparent
+    &::placeholder
+      color: rgba(0,0,0,0)
+    &:focus + label
+      color: #0001FF
+      font-size: 10px
+      top: -16px
+    &:focus
+      border-bottom: 1px solid #0001FF
+    &:focus::placeholder
+      color: rgba(0,0,0,0.5)
+  label
+    position: absolute
+    bottom: 8px
+
+
+
+label
+  font-size: 16px
+  color: rgba(0,0,0,0.5)
+  position: absolute
+  bottom: 8px
+  left: 0
+  transition: .3s
+input::placeholder
+  color: rgba(0,0,0,0)
+input
+  width: 300px
+  height: 30px
+  border-color: transparent
+  border-bottom: 1px solid rgba(0,0,0,0.5)
+  outline: none
+  transition: .3s
+  background-color: transparent
+
+  &:focus + label
+    color: #0001FF
+    font-size: 10px
+    top: -8px
+  &:focus
+    border-bottom: 1px solid #0001FF
+  &:focus::placeholder
+    color: rgba(0,0,0,0.5)
+
+.full input
+  border-bottom: 1px solid #0001FF
+.full label
+  color: #0001FF
+  font-size: 10px
+  top: -8px
+
+.md-flat-btn
+  color: #95989A
+  background-color: transparent
+  border: none
+  outline: none
+  font-weight: 500
+  transition: .2s
+  font-size: 16px
+  &:active
+    color: #333
+  &:hover
+    color: #e74c3c
+.mod-btn
+  padding-top: 8px
+  padding-bottom: 8px
+  padding-left: 24px
+  padding-right: 24px
+  border: 1px solid #0001FF
+  background-color: transparent
+  font-weight: 400
+  font-size: 16px
+  outline: none
+  transition: .2s
+  color: #0001FF
+  &:active
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2)
+  &:hover
+    background-color: #0001FF
+    color: white
+
+.btn-container
+  margin-top: 40px

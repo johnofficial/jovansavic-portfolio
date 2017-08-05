@@ -8,9 +8,29 @@ import { RequestsService } from 'app/shared/requests.service';
 })
 export class TestimonialSectionComponent implements OnInit {
 
-  raw_testimonials = [];
-  tindex: number = 0;
   testimonials: any;
+  raw_testimonials = [
+    {
+      name: 'Aleksa Stevic',
+      title: 'Marketing Manager',
+      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky. ',
+      image: 'assets/img/stevic.jpeg'
+    },
+    {
+      name: 'Veljko Stanojevic',
+      title: 'Software Engineer',
+      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky. ',
+      image: 'assets/img/veljko.jpg'
+    },
+    {
+      name: 'Milan Milanovic',
+      title: 'Video Producer',
+      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky. ',
+      image: 'assets/img/milan.jpg'
+    }
+  ];
+
+  tindex: number = 0;
 
   swipping: boolean;
 
@@ -18,12 +38,14 @@ export class TestimonialSectionComponent implements OnInit {
 
 
   constructor( private api: RequestsService) {
+
     this.testimonials = [];
-    
+    this.setTestimonial();
+/*
     this.api.getTestimonials().subscribe(res => {
       this.raw_testimonials = res.testimonials;
       this.setTestimonial();
-    })
+    })*/
 
   }
 
@@ -49,7 +71,6 @@ export class TestimonialSectionComponent implements OnInit {
     if (screen.width > 600) {
       return
     }
-    console.log(this.tindex);
 
 
     if (type == 'swipeleft') {
