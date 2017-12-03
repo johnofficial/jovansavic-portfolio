@@ -12,8 +12,9 @@ export class PortfolioPageComponent implements OnInit {
   constructor( public request: RequestsService ) { }
 
   ngOnInit() {
+    console.log(this.getProjectsList());
   }
-  getProjectsList(){
+  getProjectsList() {
     return Object.keys(this.request.project);
   }
 

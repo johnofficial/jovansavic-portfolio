@@ -2,8 +2,14 @@
   <div class="project-wrap">
     <div class="text">
       <h1>{{project.title}}</h1>
+      <a *ngFor = "let link of project.link" href="{{link}}" target="_blank" class="link">Visit web page</a>
       <p>{{project.description}} </p>
+      <p>My role in this project was:</p>
+      <ul>
+      <li *ngFor = "let role of project.roles">{{role}}</li>
+      </ul>
       <button (click)="goBack()" > Back</button>
+      <button [routerLink]="['/portfolio', nextProject() ]" > Next</button>
     </div>
     <div class="photo" >
       <img *ngFor="let photos of getPhotos()" src="{{photos}}" alt="">

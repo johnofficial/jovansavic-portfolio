@@ -18,15 +18,15 @@ export class TestimonialSectionComponent implements OnInit {
     },
     {
       name: 'Veljko Stanojevic',
-      title: 'Software Engineer',
-      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky. ',
+      title: 'Python Developer',
+      description: 'Excellent and creative UI/UX designer. It\'s great to work with him.',
       image: 'assets/img/veljko.jpg'
     },
     {
-      name: 'Milan Milanovic',
-      title: 'Video Producer',
-      description: 'It’s great to work with Jovan, every second spent in work with him is like a gift from the sky. ',
-      image: 'assets/img/milan.jpg'
+      name: 'Nikola Mihajlovic',
+      title: 'Java Developer',
+      description: 'I\'m glad he takes care of the details and makes great efforts to reach the desired goal.',
+      image: 'assets/img/miha.jpg'
     }
   ];
 

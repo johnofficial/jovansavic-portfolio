@@ -5,29 +5,30 @@
 <section class="form-section">
   <div class="fs-wrap">
     <h2>Fill the fields to introduce me with your project.</h2>
-    <form action="">
-      <div class="i-wrap" [ngClass]="{'full':hm_form.name!=''}">
-        <input id="person-name" type="text" name="person_name" placeholder="John Doe"  [(ngModel)]="hm_form.name">
+    <h2 class="status-alert"></h2>
+    <form (submit)="sendEmail(message)">
+      <div class="i-wrap" [ngClass]="{'full':message.name!=''}">
+        <input id="person-name" type="text" name="person_name" placeholder="John Doe"  [(ngModel)]="message.name">
         <label for="person-name">Your name</label>
       </div>
-      <div class="i-wrap" [ngClass]="{'full':hm_form.email!=''}">
-        <input id="person-mail" type="email" name="person_mail" placeholder="johndoe@mail.com" [(ngModel)]="hm_form.email">
+      <div class="i-wrap" [ngClass]="{'full':message.email!=''}">
+        <input id="person-mail" type="email" name="person_mail" placeholder="johndoe@mail.com" [(ngModel)]="message.email">
         <label for="person-mail">Your e-mail</label>
       </div>
-      <div class="i-wrap" [ngClass]="{'full':hm_form.project_name!=''}">
-        <input id="project-name" type="text" name="project_name" placeholder="Designing Site for Startup" [(ngModel)]="hm_form.project_name">
+      <div class="i-wrap" [ngClass]="{'full':message.project_name!=''}">
+        <input id="project-name" type="text" name="project_name" placeholder="Designing Site for Startup" [(ngModel)]="message.project_name">
         <label for="project-name">Project name</label>
       </div>
-      <div class="i-wrap" [ngClass]="{'full':hm_form.project_budget!=null}">
-        <input id="project-budget" type="number" name="project_budget" placeholder="900" [(ngModel)]="hm_form.project_budget">
+      <div class="i-wrap" [ngClass]="{'full':message.project_budget!=null}">
+        <input id="project-budget" type="number" name="project_budget" placeholder="900" [(ngModel)]="message.project_budget">
         <label for="project-budget">Project budget in dolars</label>
       </div>
-      <div class="ta-wrap" [ngClass]="{'full':hm_form.project_description!=''}">
-        <textarea (keyup)="autogrow()" name="project_description" id="project-desription" rows="10" placeholder="My goal is to..." [(ngModel)]="hm_form.project_description"></textarea>
+      <div class="ta-wrap" [ngClass]="{'full':message.project_description!=''}">
+        <textarea (keyup)="autogrow()" name="project_description" id="project-desription" rows="10" placeholder="My goal is to..." [(ngModel)]="message.project_description"></textarea>
         <label for="project-desription">Project description</label>
       </div>
       <div class="btn-container">
-        <button class="mod-btn">SEND</button> <button class="md-flat-btn">CLEAR</button>
+        <button type="submit" class="mod-btn">SEND</button> <button type="reset" class="md-flat-btn">CLEAR</button>
       </div>
     </form>
   </div>
@@ -36,13 +37,17 @@
 <section class="contact-info">
   <div class="c-i-wrap">
     <h2>Contact informations</h2>
-    <strong>E-mail:</strong><p>jovan.saviic@gmail.com</p>
-    <div class="ico-wrap">
-
-      <a href="https://www.facebook.com/jovan.saviic" target="_blank"><img src="assets/img/fb-ico.svg" alt=""></a>
-      <a href="https://www.instagram.com/__savke/" target="_blank"><img src="assets/img/insta-ico.svg" alt=""></a>
-      <a href="https://www.linkedin.com/in/jovan-savic-895856129/" target="_blank"><img src="assets/img/in-ico.svg" alt=""></a>
-      <a href="https://github.com/johnofficial" target="_blank"><img src="assets/img/git-ico.svg" alt=""></a>
+    <div class="flex-wrap">
+      <div class="mail">
+        <strong>Email:</strong>
+        <p>jovan.saviic@gmail.com</p>
+      </div>
+      <div class="ico-wrap">
+        <a href="https://www.behance.net/jovansavic" target="_blank"><img src="assets/img/be-ico.svg" alt=""></a>
+        <a href="https://www.instagram.com/__savke/" target="_blank"><img src="assets/img/insta-ico.svg" alt=""></a>
+        <a href="https://www.linkedin.com/in/jovan-savic-895856129/" target="_blank"><img src="assets/img/in-ico.svg" alt=""></a>
+        <a href="https://github.com/johnofficial" target="_blank"><img src="assets/img/git-ico.svg" alt=""></a>
+      </div>
     </div>
   </div>
 </section>

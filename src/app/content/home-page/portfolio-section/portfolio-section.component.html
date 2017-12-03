@@ -9,9 +9,7 @@
       <article class="project" *ngFor="let id_project of getProjectsList()" [routerLink]="['portfolio', id_project ]" >
         <img src="{{request.project[id_project].thumbnail}}" alt="{{request.project[id_project].title}} thumbnail">
         <div class="cover">
-          <div class="meta">
             <h2>{{request.project[id_project].title}}</h2>
-          </div>
         </div>
       </article>
 

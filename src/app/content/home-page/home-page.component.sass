@@ -31,11 +31,12 @@
         font-weight: 300
 
         strong
-            letter-spacing: 5px
-        .b-space
-            letter-spacing: 10px
-        .bb-space
-            letter-spacing: 10px
+            letter-spacing: 3px
+            font-weight: 500
+        //.b-space
+        //    letter-spacing: 5px
+        //.bb-space
+        //    letter-spacing: 5px
     .cover-description
         font-size: 20px
         font-weight: 300
@@ -65,8 +66,11 @@
     img
         max-width: 100%
         height: auto
-        box-shadow: 0px 0px 100px rgba(0,0,0, 0.7)
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+        border-radius: 2px
         transition: .3s
+        -webkit-filter: grayscale(100%) /* Safari */
+        filter: grayscale(50%)
     &:hover img
       transform: scale(1.1)
 

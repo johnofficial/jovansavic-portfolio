@@ -11,6 +11,12 @@
     font-weight: 400
     margin-bottom: 40px
     font-size: 20px
+    max-width: 90%
+    margin: 30px auto
+    &.success
+      color: #88C33F
+    &.error
+      color: #e74c3c
 form
   display: flex
   flex-wrap: wrap
@@ -117,3 +123,11 @@ input
 
 .btn-container
   margin-top: 40px
+
+@media(max-width: 480px)
+  form
+    justify-content: center
+  .ta-wrap
+    max-width: 300px
+  textarea
+    width: 300px
